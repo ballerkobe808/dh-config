@@ -60,10 +60,9 @@ Usage
       }
     }
     
-  To access the name property:
-  
-      dhConfig.get('name');
+  To access the server port setting by calling:
+      dhConfig.get('serverSettings:port');
       
-  To access the server port settings:
+  Or if you don't like the : separator you can access the server port setting by calling:
   
       dhConfig.get('serverSettings', 'port');
