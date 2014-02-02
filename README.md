@@ -54,7 +54,7 @@ Usage
       
 4) You can now access your settings by calling the following method:
 
-      dhConfig.get(PARAMETER_KEY);
+      dhConfig.get(KEY);
       
   You may specify multiple keys if you are traversing through your settings objects. For example, if you had the following json file:
   
