@@ -4,6 +4,9 @@ var fs = require('fs');
 var util = require('util');
 var _ = require('lodash');
 
+// singleton instance reference.
+var _instance;
+
 /**
  * Builds the filename of the json config file based on
  * the configuration name.
@@ -15,6 +18,19 @@ function getConfigFileName(configName) {
 }
 
 /**
+ * Replaces your default delimiter with the nconf delimiter.
+ * @param key - The key to replace your custom delimiter in.
+ * @param delimiter - Your custom delimiter.
+ * @returns {string} - The nconf formatted key.
+ */
+function cleanKey (key, delimiter) {
+    // make sure the delimiter is present.
+    if (_.contains(key, delimiter)) {
+        return key.split(delimiter).join(':');
+    }
+}
+
+/**
  * Constructor for the server config module.
  * @constructor
  * @param configJsonDirectory - The file path to the config json directory holding all the json config files.
@@ -22,6 +38,9 @@ function getConfigFileName(configName) {
 var ServerConfig = function (configJsonDirectory) {
     // set the config directory.
     this.configDirectory = configJsonDirectory;
+
+    // set the default delimiter for nested keys.
+    this.delimiter = ":";
 
     if (_.isUndefined(this.configDirectory) || _.isEmpty(this.configDirectory) || !fs.existsSync(this.configDirectory)) {
         // print a message.
@@ -123,6 +142,20 @@ ServerConfig.prototype.loadEnvironmentConfig = function(defaultConfig) {
 };
 
 /**
+ * Setter for the delimiter for nested key values.
+ * @param delimiter - The delimiter to use.
+ */
+ServerConfig.prototype.setDelimiter = function(delimiter) {
+    if (_.isUndefined(delimiter) || _.isNull(delimiter) || _.isEmpty(delimiter) || !_.isString(delimiter)) {
+        util.debug('Invalid delimiter specified.');
+        return;
+    }
+
+    // set the new delimiter.
+    this.delimiter = delimiter;
+};
+
+/**
  * Getter method that takes a variable number of parameters and traverses the main settings object for the value.
  * @param {*} - One or more key params in order of how to traverse the settings object.
  * @returns {*} - The value requested.
@@ -134,13 +167,13 @@ ServerConfig.prototype.get = function() {
     // check if there are arguments
     if (arguments.length > 0) {
         // set current value to the first argument.
-        currentValue = this.nconf.get(arguments[0]);
+        currentValue = this.nconf.get(cleanKey(arguments[0], this.delimiter));
     }
 
     // check if you need to traverse further.
     if (arguments.length > 1) {
         for (var i = 1; i < arguments.length; i++) {
-            currentValue = currentValue[arguments[i]];
+            currentValue = currentValue[cleanKey(arguments[i], this.delimiter)];
         }
     }
 
@@ -148,6 +181,18 @@ ServerConfig.prototype.get = function() {
     return currentValue;
 };
 
+/**
+ * return the singleton instance of the server config module.
+ * @param configJsonDirectory - The directory where the json config files live.
+ * @returns {*} - The singleton instance.
+ */
 module.exports = function(configJsonDirectory) {
-    return new ServerConfig(configJsonDirectory);
+    // check if the current instance is undefined.
+    // if so, create a new server config instance and save it.
+    if (_.isUndefined(_instance)) {
+        _instance = new ServerConfig(configJsonDirectory)
+    }
+
+    // return the instance.
+    return _instance;
 };

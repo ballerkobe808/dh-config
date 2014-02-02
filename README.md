@@ -32,18 +32,18 @@ Usage
     
 2) Load a config file by passing in the name of the config file without the .json:
 
-    dhConfig.loadConfig('all');
+      dhConfig.loadConfig('all');
 
 3) You can also automatically load a config file that matches your NODE_ENV name.
-    (Note) you can either specify your environment using:
+   (Note) you can either specify your environment using:
       
       NODE_ENV=[environment name] 
       
-  or by simply specifying the name on the command line:
+   or by simply specifying the name on the command line:
       
       node server.js [environment name]
     
-  To load the config based on the environment name, perform the following call while passing in a default config name to use in case the environment name was not specified:
+   To load the config based on the environment name, perform the following call while passing in a default config name to use in case the environment name was not specified:
     
       dhConfig.loadEnvironmentConfig('local');
       
@@ -61,8 +61,13 @@ Usage
     }
     
   To access the server port setting by calling:
+
       dhConfig.get('serverSettings:port');
       
-  Or if you don't like the : separator you can access the server port setting by calling:
-  
-      dhConfig.get('serverSettings', 'port');
+  Or if you don't like the : separator you can set the delimiter of your choice:
+
+      dhConfig.setDelimiter('.');
+
+  Now you will be able to use the dot notation to access nested properties:
+
+      dhConfig.get('serverSettings.port');
