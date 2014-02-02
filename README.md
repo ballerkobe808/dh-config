@@ -28,7 +28,12 @@ Usage
 
 1) Require the module when needed and pass in the file path to the directory where your json config files are stored:
     
-    var dhConfig = require('dh-config')(__dirname + '/../config/json');
+      var dhConfig = require('dh-config')(__dirname + '/../config/json');
+    
+    (Note) passing in the file path only has to be performed on the first require to dh-config. All subsequent
+    requires can simply be invoked with:
+    
+      var dhConfig = require('dh-config')();
     
 2) Load a config file by passing in the name of the config file without the .json:
 
