@@ -30,8 +30,8 @@ Usage
     
       var dhConfig = require('dh-config')(__dirname + '/../config/json');
     
-    (Note) passing in the file path only has to be performed on the first require to dh-config. All subsequent
-    requires can simply be invoked with:
+   (Note) passing in the file path only has to be performed on the first require to dh-config. All subsequent
+   requires can simply be invoked with:
     
       var dhConfig = require('dh-config')();
     
