@@ -139,6 +139,9 @@ ServerConfig.prototype.loadEnvironmentConfig = function(defaultConfig) {
         // load the config filePath.
         this.nconf.file('environmentConfig', configFilePath);
     }
+
+    // add the config name to nconf.
+    this.nconf.set('environmentName', configName);
 };
 
 /**
@@ -179,6 +182,14 @@ ServerConfig.prototype.get = function() {
 
     // return the value.
     return currentValue;
+};
+
+/**
+ * Gets the environment name.
+ * @return {String} - The environment name.
+ */
+ServerConfig.prototype.getEnvironmentName = function() {
+    return this.nconf.get('environmentName');
 };
 
 /**
