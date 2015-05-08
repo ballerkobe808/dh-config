@@ -1,6 +1,6 @@
 {
     "name": "dh-config",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": {
         "name": "Michael Uranaka",
         "email": "uranakam@gmail.com"
@@ -18,6 +18,6 @@
     "engines": {
         "node": ">= 0.10"
     },
-    "_id": "dh-config@0.1.0",
+    "_id": "dh-config@0.1.5",
     "readmeFilename": "README.md"
 }
