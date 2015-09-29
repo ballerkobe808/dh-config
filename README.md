@@ -81,5 +81,5 @@ Usage
 
 #### 5) You can load a config file using a file path:
 
-    dhConfig.loadConfigAtPath(__dirname + '/config/json/local.json');
+    dhConfig.loadConfigWithPath(__dirname + '/config/json/local.json');
     
