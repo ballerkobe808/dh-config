@@ -1,13 +1,13 @@
 {
     "name": "dh-config",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "author": {
         "name": "Michael Uranaka",
         "email": "uranakam@gmail.com"
     },
     "dependencies": {
         "lodash":"2.4.1",
-        "nconf": "0.6.9"
+        "nconf": "0.8.1"
     },
     "main": "index",
     "description":"Node module that makes it easier to setup and load deployment environment settings.",
@@ -18,6 +18,6 @@
     "engines": {
         "node": ">= 0.10"
     },
-    "_id": "dh-config@0.2.1",
+    "_id": "dh-config@0.2.4",
     "readmeFilename": "README.md"
 }
