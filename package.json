@@ -6,8 +6,8 @@
         "email": "uranakam@gmail.com"
     },
     "dependencies": {
-        "lodash": "4.17.4",
-        "nconf": "0.8.4"
+        "lodash": "4.17.10",
+        "nconf": "0.10.0"
     },
     "main": "index",
     "description": "Node module that makes it easier to setup and load deployment environment settings.",
@@ -16,7 +16,7 @@
         "url": "git://github.com/uranakam/dh-config.git"
     },
     "engines": {
-        "node": ">= 0.10"
+        "node": ">= 6.10"
     },
     "readmeFilename": "README.md",
     "license": "(MIT OR Apache-2.0)"
