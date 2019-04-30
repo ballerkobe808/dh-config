@@ -16,7 +16,7 @@
         "url": "git://github.com/uranakam/dh-config.git"
     },
     "engines": {
-        "node": ">= 6.10"
+        "node": ">= 8.10"
     },
     "readmeFilename": "README.md",
     "license": "(MIT OR Apache-2.0)"
