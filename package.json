@@ -1,12 +1,12 @@
 {
     "name": "dh-config",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "author": {
         "name": "Michael Uranaka",
         "email": "uranakam@gmail.com"
     },
     "dependencies": {
-        "lodash": "4.17.11",
+        "lodash": "4.17.15",
         "nconf": "0.10.0"
     },
     "main": "index",
@@ -16,7 +16,7 @@
         "url": "git://github.com/uranakam/dh-config.git"
     },
     "engines": {
-        "node": ">= 8.10"
+        "node": ">= 10.16"
     },
     "readmeFilename": "README.md",
     "license": "(MIT OR Apache-2.0)"
