@@ -1,23 +1,23 @@
 {
-    "name": "dh-config",
-    "version": "0.3.3",
-    "author": {
-        "name": "Michael Uranaka",
-        "email": "uranakam@gmail.com"
-    },
-    "dependencies": {
-        "lodash": "4.17.15",
-        "nconf": "0.10.0"
-    },
-    "main": "index",
-    "description": "Node module that makes it easier to setup and load deployment environment settings.",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/uranakam/dh-config.git"
-    },
-    "engines": {
-        "node": ">= 10.16"
-    },
-    "readmeFilename": "README.md",
-    "license": "(MIT OR Apache-2.0)"
+  "name": "dh-config",
+  "version": "0.3.5",
+  "author": {
+    "name": "Michael Uranaka",
+    "email": "uranakam@gmail.com"
+  },
+  "dependencies": {
+    "lodash": "4.17.15",
+    "nconf": "0.10.0"
+  },
+  "main": "index",
+  "description": "Node module that makes it easier to setup and load deployment environment settings.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uranakam/dh-config.git"
+  },
+  "engines": {
+    "node": ">= 10.16"
+  },
+  "readmeFilename": "README.md",
+  "license": "(MIT OR Apache-2.0)"
 }
