@@ -1,13 +1,13 @@
 {
   "name": "dh-config",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "author": {
     "name": "Michael Uranaka",
     "email": "uranakam@gmail.com"
   },
   "dependencies": {
     "lodash": "4.17.20",
-    "nconf": "0.10.0"
+    "nconf": "0.11.0"
   },
   "main": "index",
   "description": "Node module that makes it easier to setup and load deployment environment settings.",
@@ -16,7 +16,7 @@
     "url": "git://github.com/uranakam/dh-config.git"
   },
   "engines": {
-    "node": ">= 10.16"
+    "node": ">= 12"
   },
   "readmeFilename": "README.md",
   "license": "(MIT OR Apache-2.0)"
