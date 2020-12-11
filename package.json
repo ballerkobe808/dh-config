@@ -1,6 +1,9 @@
 {
   "name": "dh-config",
-  "version": "0.3.7",
+  "version": "0.3.8",
+  "scripts": {
+    "install-resolutions": "npx npm-force-resolutions && npm install"
+  },
   "author": {
     "name": "Michael Uranaka",
     "email": "uranakam@gmail.com"
@@ -8,6 +11,9 @@
   "dependencies": {
     "lodash": "4.17.20",
     "nconf": "0.11.0"
+  },
+  "resolutions": {
+    "ini": "1.3.7"
   },
   "main": "index",
   "description": "Node module that makes it easier to setup and load deployment environment settings.",
